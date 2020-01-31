@@ -1,8 +1,13 @@
 'use strict'
 function game() {
-  let secretNum = 23;
-  let questionNum = +prompt('Введите число');
+
+  function getRandNum() {
+    return Math.floor(Math.random() * 100);
+  }
+  let secretNum = getRandNum();
+  
     function startGame() {
+      let questionNum = +prompt('Введите число');
       if (secretNum === questionNum) {
         alert('Правильно');
         return;
@@ -12,13 +17,13 @@ function game() {
       }
       if (isNaN(questionNum)) {
         alert('Это не число');
-        return game();
+        startGame();
       } else if (questionNum > secretNum) {
         alert('Загаданное число меньше');
-        return game();
+        startGame();
       } else {
         alert('Загаданное число больше');
-        return game();
+        startGame();
       } 
     }
     startGame();
