@@ -1,3 +1,4 @@
+'use strict'
 function game() {
   let secretNum = 23;
   let questionNum = +prompt('Введите число');
